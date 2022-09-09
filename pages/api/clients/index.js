@@ -2,6 +2,8 @@ import Client from "../../../models/Client";
 
 import dbConnection from "../../../services/dbConnection";
 
+import NextCors from "nextjs-cors";
+
 dbConnection();
 
 const METHODS = {
@@ -12,6 +14,12 @@ const METHODS = {
 
 export default async (req, res) => {
   const { method } = req;
+
+  await NextCors(req, res, {
+    methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
+    origin: "*",
+    optionsSuccessStatus: 200,
+  });
 
   switch (method) {
     case METHODS.GET:

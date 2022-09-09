@@ -6,7 +6,7 @@ module.exports = {
         headers: [
           {
             key: "Access-Control-Allow-Origin",
-            value: "https://crud-angular-node.vercel.app/projeto",
+            value: "api-para-crud-angular.vercel.app/api/clients/",
           },
         ],
       },
