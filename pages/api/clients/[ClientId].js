@@ -49,6 +49,11 @@ export default async (req, res) => {
         res.status(500).json({ message: "Erro ao deletar clients" });
       }
       break;
+
+    case METHODS.OPTIONS:
+      res.status(200).json({ message: "OK" });
+      break;
+      
     default:
       res.status(405).json({
         message: "Método não permitido",
